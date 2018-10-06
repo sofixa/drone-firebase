@@ -13,7 +13,7 @@
 # limitations under the License.
 
 # Pull base image.
-FROM alpine:3.3
+FROM alpine:3.8
 
 # Upgrade and install dependencies.
 RUN apk add --no-cache nodejs
