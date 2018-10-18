@@ -16,7 +16,7 @@
 FROM alpine:3.8
 
 # Upgrade and install dependencies.
-RUN apk add --no-cache nodejs
+RUN apk add --no-cache nodejs npm
 
 # Install required firebase-tools NPM package.
 RUN npm install -g firebase-tools
