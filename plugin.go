@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"github.com/davecgh/go-spew/spew"
 	"os"
 	"os/exec"
 	"strings"
@@ -19,6 +20,9 @@ type (
 )
 
 func (p Plugin) Exec() error {
+	if p.Debug {
+		spew.Dump(p)
+	}
 	if p.shouldSetProject() {
 		use := p.buildUse()
 		if err := execute(use, p.Debug, p.DryRun); err != nil {
@@ -48,6 +52,7 @@ func getEnvironment(oldEnv []string, p *Plugin) []string {
 	env = append(env, fmt.Sprintf("FIREBASE_TOKEN=%s", p.Token))
 	if p.Debug {
 		env = append(env, fmt.Sprintf("DEBUG=%s", "true"))
+		spew.Dump(env)
 	}
 	return env
 }
