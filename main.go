@@ -40,7 +40,7 @@ func main() {
 		},
 		cli.StringFlag{
 			Name:   "project",
-			Usage:  "(optional) The project alias to deploy to. If not set, uses the default specified in the .firebaserc file. Note: This does currently not work for Firebase project IDs, so you must run firebase use --add to add aliases for your different environments. Then use this field to specify the alias name such as default, staging or production",
+			Usage:  "(optional) The project id to deploy to. If not set, uses the default specified in the .firebaserc file.",
 			EnvVar: "PLUGIN_PROJECT",
 			Value:  "",
 		},

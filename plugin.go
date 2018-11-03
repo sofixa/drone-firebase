@@ -20,6 +20,7 @@ type (
 )
 
 func (p Plugin) Exec() error {
+	fmt.Printf("Firebase Plugin for Drone built from %s\n", buildCommit)
 	if p.Debug {
 		spew.Dump(p)
 	}
