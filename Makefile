@@ -35,7 +35,7 @@ vet:
 	go vet $(PACKAGES)
 
 test:
-	@for PKG in $(PACKAGES); do go test -cover -coverprofile $$GOPATH/src/$$PKG/coverage.out $$PKG || exit 1; done;
+	@for PKG in $(PACKAGES); do go test -cover -coverprofile coverage.out $$PKG || exit 1; done;
 
 docker:
 	GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -ldflags '-s -w $(LDFLAGS)'
