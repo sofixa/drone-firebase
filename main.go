@@ -27,8 +27,8 @@ var (
 func main() {
 
 	app := cli.NewApp()
-	app.Name = "hugo plugin"
-	app.Usage = "hugo plugin"
+	app.Name = "firebase Drone plugin"
+	app.Usage = "firebase Drone plugin"
 	app.Action = run
 	app.Version = fmt.Sprintf("%s", buildCommit)
 	app.Flags = []cli.Flag{
@@ -72,7 +72,7 @@ func main() {
 	}
 
 }
-func run(c *cli.Context) error {
+func Run(c *cli.Context) error {
 	plugin := Plugin{
 		Token:   c.String("token"),
 		Project: c.String("project"),
