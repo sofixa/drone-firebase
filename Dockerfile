@@ -13,7 +13,7 @@
 # limitations under the License.
 
 # Pull base golang image to compile the drone-firebase plugin
-FROM golang:1.12-alpine
+FROM golang:1.13-alpine
 
 # add project files
 RUN mkdir /drone
@@ -27,7 +27,7 @@ RUN apk add --no-cache git build-base
 RUN go build -o /bin/drone-firebase . 
 
 # Pull base alpine image for rest
-FROM alpine:3.10
+FROM alpine:3.11
 
 # Upgrade and install dependencies
 RUN apk add --no-cache nodejs npm 
